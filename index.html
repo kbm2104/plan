@@ -547,7 +547,6 @@
   <!-- ================= TODAY ================= -->
   <div class="page" id="page-today">
     <h1 class="page-title">오늘의 일일계획</h1>
-    <p class="page-desc">프랭클린 플래너의 일일 페이지 구조를 그대로 가져왔어요 — 시간표, ABC 우선업무, 기록사항까지.</p>
 
     <div class="card">
       <div class="today-cover" id="todayCover"></div>
@@ -562,6 +561,10 @@
           </div>
         </div>
         <div class="ph-right">
+          <div class="row" style="justify-content:flex-end; gap:6px; margin-bottom:6px;">
+            <span class="muted" style="font-size:12.5px;">날짜 직접 선택</span>
+            <input type="date" id="dayPicker" style="font-size:12.5px; padding:2px 6px;">
+          </div>
           <div class="mini-cal-nav">
             <button class="ghost" onclick="shiftMiniCalMonth(-1)">‹</button>
             <span id="miniCalLabel" class="muted"></span>
@@ -572,10 +575,6 @@
         </div>
       </div>
       <div id="monthGoalBanner"></div>
-      <div class="row" style="margin-top:14px;">
-        <span class="muted">날짜 직접 선택</span>
-        <input type="date" id="dayPicker">
-      </div>
     </div>
 
     <div class="planner-body">
@@ -602,7 +601,7 @@
       </div>
 
       <div class="card schedule-col">
-        <h3>예정일정</h3>
+        <h3>오늘 한 일</h3>
         <div id="scheduleGrid"></div>
       </div>
     </div>
@@ -1341,6 +1340,9 @@ const STATUS_CLASS  = {'':'', done:'st-done', forward:'st-forward', delegate:'st
 
 const SCHEDULE_ROWS = [
   {type:'divider', label:'AM'},
+  {type:'hour', key:'6',  label:'6'},
+  {type:'hour', key:'7',  label:'7'},
+  {type:'hour', key:'8',  label:'8'},
   {type:'hour', key:'9',  label:'9'},
   {type:'hour', key:'10', label:'10'},
   {type:'hour', key:'11', label:'11'},
@@ -1351,7 +1353,11 @@ const SCHEDULE_ROWS = [
   {type:'hour', key:'15', label:'3'},
   {type:'hour', key:'16', label:'4'},
   {type:'hour', key:'17', label:'5'},
-  {type:'hour', key:'18', label:'6'}
+  {type:'hour', key:'18', label:'6'},
+  {type:'hour', key:'19', label:'7'},
+  {type:'hour', key:'20', label:'8'},
+  {type:'hour', key:'21', label:'9'},
+  {type:'hour', key:'22', label:'10'}
 ];
 
 function currentDay(){
